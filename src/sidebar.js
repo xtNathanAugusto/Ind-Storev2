@@ -8,6 +8,7 @@
   const sections = Array.from(document.querySelectorAll(".section"));
   const navLinks = Array.from(document.querySelectorAll(".nav-link"));
   const progressFill = document.getElementById("scrollProgress");
+  const header = document.querySelector(".header");
   const menuToggle = document.getElementById("menuToggle");
   const sidebar = document.getElementById("sidebar");
 
@@ -54,6 +55,18 @@
   });
 
   let progressTicking = false;
+  let lastScrollY = window.scrollY;
+
+  function updateHeaderVisibility() {
+    if (!header) return;
+
+    const currentScrollY = window.scrollY;
+    const scrollingDown = currentScrollY > lastScrollY;
+    const shouldHide = scrollingDown && currentScrollY > 80;
+
+    header.classList.toggle("header--hidden", shouldHide);
+    lastScrollY = Math.max(0, currentScrollY);
+  }
 
   function updateProgress() {
     const scrollTop = window.scrollY;
@@ -70,6 +83,7 @@
     "scroll",
     () => {
       if (!progressTicking) {
+        updateHeaderVisibility();
         requestAnimationFrame(updateProgress);
         progressTicking = true;
       }
