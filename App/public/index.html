@@ -15,8 +15,25 @@
       content="Jogos indie selecionados, sem enrolação."
     />
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols (ícones em fonte, sem SVG) -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0"
+    />
+
     <link href="./css/index.css" rel="stylesheet" />
     <style>
+      /* =========================================================
+         ⚠️ BLOCO PROTEGIDO — Accordion "Melhores Jogos"
+         Intocado conforme pedido — mesma estrutura e timings.
+      ========================================================= */
       .game-list,
       .game-card,
       .game-card:hover,
@@ -69,6 +86,7 @@
         filter: grayscale(0.4);
         transform: scale(0.97);
       }
+      /* ===================== FIM DO BLOCO PROTEGIDO ===================== */
     </style>
   </head>
   <body id="topo">
@@ -130,10 +148,14 @@
                 fenômenos multiplayer aos RPGs que ninguém esquece.
               </p>
               <div class="hero-actions">
-                <a href="#melhores-jogos" class="btn btn--primary"
-                  >Ver catálogo</a
-                >
-                <a href="#contatos" class="btn btn--ghost">Falar com a loja</a>
+                <a href="#melhores-jogos" class="btn btn--primary">
+                  <span class="material-symbols-outlined">sports_esports</span>
+                  Ver catálogo
+                </a>
+                <a href="#contatos" class="btn btn--ghost">
+                  <span class="material-symbols-outlined">chat</span>
+                  Falar com a loja
+                </a>
               </div>
             </div>
           </div>
@@ -424,7 +446,9 @@
         type="button"
         aria-label="Voltar ao topo"
       >
-        <span aria-hidden="true">↑</span>
+        <span class="material-symbols-outlined" aria-hidden="true"
+          >arrow_upward</span
+        >
       </button>
     </div>
 

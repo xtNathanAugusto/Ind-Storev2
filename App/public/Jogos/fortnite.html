@@ -8,7 +8,7 @@
       name="description"
       content="Confira os detalhes, imagens, requisitos e comentários sobre Fortnite na Ind Store."
     />
-    <meta name="theme-color" content="#0a0715" />
+    <meta name="theme-color" content="#07050f" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,6 +16,11 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0..1,0"
     />
 
     <link href="../css/index.css" rel="stylesheet" />
@@ -28,15 +33,15 @@
     <!-- Marquee -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>FORTNITE - BATTLE ROYALE</span><span>★</span>
+        <span>FORTNITE — BATTLE ROYALE</span><span>★</span>
         <span>MUNDO ABERTO</span><span>★</span> <span>JOGUE DE GRAÇA</span
-        ><span>★</span> <span>FORTNITE - BATTLE ROYALE</span><span>★</span>
+        ><span>★</span> <span>FORTNITE — BATTLE ROYALE</span><span>★</span>
         <span>MUNDO ABERTO</span><span>★</span> <span>JOGUE DE GRAÇA</span
         ><span>★</span>
       </div>
     </div>
 
-    <!-- NAV BAR (A mesma do Index com redirecionamento) -->
+    <!-- NAV BAR (mesma do index, com redirecionamento) -->
     <header class="header">
       <div class="header__inner">
         <a href="../index.html" class="logo">
@@ -53,28 +58,27 @@
     </header>
 
     <main id="main-content">
-      <!-- HERO SECTION: 100% Width com vídeo em loop de fundo -->
+      <!-- HERO: vídeo em loop de fundo, autoplay + mudo -->
       <section class="game-hero">
         <div class="game-hero__video" aria-hidden="true">
           <iframe
-            src="https://www.youtube.com/embed/9AsEwQJiQQE?autoplay=1&mute=1&loop=1&playlist=9AsEwQJiQQE&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1"
+            src="https://www.youtube.com/embed/9AsEwQJiQQE?autoplay=1&mute=1&loop=1&playlist=9AsEwQJiQQE&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1&iv_load_policy=3"
+            title="Fortnite — trailer em loop"
             frameborder="0"
             allow="autoplay; encrypted-media"
             allowfullscreen
-          >
-          </iframe>
+          ></iframe>
         </div>
         <div class="game-hero__overlay"></div>
+        <div class="game-hero__noise"></div>
 
         <div class="game-hero__content">
-          <!-- Logo do Jogo no Canto Esquerdo -->
           <img
             src="../imgs/fortnite%20logo.png"
             alt="Fortnite Logo"
             class="game-hero__logo"
           />
 
-          <!-- Tags -->
           <div class="game-hero__tags">
             <span class="game-hero__tag">Battle Royale</span>
             <span class="game-hero__tag">Multijogador</span>
@@ -82,16 +86,29 @@
             <span class="game-hero__tag">Sobrevivência</span>
           </div>
 
-          <!-- Botões de Ação -->
           <div class="game-hero__actions">
-            <button class="btn btn--primary">Obter Jogo</button>
-            <button class="btn btn--ghost">Presentear</button>
-            <button class="btn btn--ghost">+ Lista de Desejos</button>
+            <button class="btn btn--primary">
+              <span class="material-symbols-outlined">download</span>
+              Obter Jogo
+            </button>
+            <button class="btn btn--ghost">
+              <span class="material-symbols-outlined">card_giftcard</span>
+              Presentear
+            </button>
+            <button class="btn btn--ghost">
+              <span class="material-symbols-outlined">add</span>
+              Lista de Desejos
+            </button>
           </div>
+        </div>
+
+        <div class="hero-scroll-cue">
+          <span>Role para saber mais</span>
+          <span class="hero-scroll-cue__line"></span>
         </div>
       </section>
 
-      <!-- DETALHES DO JOGO (Centralizado) -->
+      <!-- DETALHES DO JOGO -->
       <section class="game-details section">
         <div class="game-details__container">
           <p class="eyebrow">VISÃO GERAL</p>
@@ -101,100 +118,223 @@
             você e seus amigos batalham para ser os últimos sobreviventes ou
             colaboram para criar seus próprios mundos dos sonhos. Jogue Battle
             Royale e o Construção Zero de graça, aprecie shows, eventos ao vivo
-            e explore mais de milhares de jogos criados pela comunidade.
+            e explore milhares de jogos criados pela comunidade.
           </p>
+
+          <div class="game-details__stats">
+            <div class="stat">
+              <span class="stat__value">100</span>
+              <span class="stat__label">Jogadores por partida</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">Grátis</span>
+              <span class="stat__label">Para jogar</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">18+</span>
+              <span class="stat__label">Temporadas lançadas</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">4.3</span>
+              <span class="stat__label">Avaliação da comunidade</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- CARROSSEL DE IMAGENS (Preset de 6 Fotos) -->
+      <!-- CARROSSEL DE IMAGENS -->
       <section class="game-carousel section">
         <div class="section-heading">
           <p class="eyebrow">GALERIA</p>
           <h2 class="section-title">Capturas de Tela</h2>
         </div>
-        <div class="carousel-container">
-          <div class="carousel-slide">
-            <img
-              src="https://cms-assets.unrealengine.com/cm6l5gfpm05kr07my04cqgy2x/resize=fit:clip,width:1920/quality=value:80/cmt14h2ardvpq07o76t76zt0m"
-              alt="Fortnite Screenshot 1"
-            />
+
+        <div class="carousel-shell" id="galeria">
+          <div class="carousel-stage">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="carousel-slide">
+                <img
+                  src="https://pbs.twimg.com/media/GbatptUa8AAZlJt?format=jpg&name=large"
+                  alt="Cena de combate em Fortnite"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="https://pbs.twimg.com/media/HQJ6KrbWUAAwVD3?format=jpg&name=large"
+                  alt="Tela de carregamento — Addison"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="https://pbs.twimg.com/media/HQJ6L9MXQAAf9JJ?format=jpg&name=large"
+                  alt="Tela de carregamento — The Exalted and the Reforged"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="https://pbs.twimg.com/media/HQJ6L9GWwAALK3d?format=jpg&name=large"
+                  alt="Tela de carregamento — Voyager Vérité"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="https://pbs.twimg.com/media/HQJ6L9SWAAAFCdX?format=jpg&name=large"
+                  alt="Tela de carregamento — Magic Awakens"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="https://pbs.twimg.com/media/HQJ6NNpX0AAiK9L?format=jpg&name=large"
+                  alt="Tela de carregamento — Ray of Light"
+                />
+              </div>
+            </div>
+
+            <button
+              class="carousel-nav carousel-nav--prev"
+              aria-label="Imagem anterior"
+              id="carouselPrev"
+            >
+              <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+            <button
+              class="carousel-nav carousel-nav--next"
+              aria-label="Próxima imagem"
+              id="carouselNext"
+            >
+              <span class="material-symbols-outlined">chevron_right</span>
+            </button>
           </div>
-          <div class="carousel-slide">
-            <img
-              src="https://static.wikia.nocookie.net/fortnite/images/b/b7/It%27s_Addison_%28Full%29_-_Loading_Screen_-_Fortnite.png/revision/latest/scale-to-width-down/1000?cb=20260806172603"
-              alt="Fortnite Screenshot 2"
-            />
-          </div>
-          <div class="carousel-slide">
-            <img
-              src="https://static.wikia.nocookie.net/fortnite/images/f/f8/The_Exalted_and_the_Reforged_%28Full%29_-_Loading_Screen_-_Fortnite.png/revision/latest/scale-to-width-down/1000?cb=20260319130728"
-              alt="Fortnite Screenshot 3"
-            />
-          </div>
-          <div class="carousel-slide">
-            <img
-              src="https://static.wikia.nocookie.net/fortnite/images/6/65/Voyager_V%C3%A9rit%C3%A9_%28Full%29_-_Loading_Screen_-_Fortnite.png/revision/latest/scale-to-width-down/1000?cb=20251130015915"
-              alt="Fortnite Screenshot 4"
-            />
-          </div>
-          <div class="carousel-slide">
-            <img
-              src="https://static.wikia.nocookie.net/fortnite/images/a/aa/Magic_Awakens_%28Full%29_-_Loading_Screen_-_Fortnite.png/revision/latest/scale-to-width-down/1000?cb=20241205153038"
-              alt="Fortnite Screenshot 5"
-            />
-          </div>
-          <div class="carousel-slide">
-            <img
-              src="https://static.wikia.nocookie.net/fortnite/images/3/34/Ray_of_Light_%28Full%29_-_Loading_Screen_-_Fortnite.png/revision/latest/scale-to-width-down/1000?cb=20250607213016"
-              alt="Fortnite Screenshot 6"
-            />
+
+          <div class="carousel-thumbs" id="carouselThumbs">
+            <button
+              class="carousel-thumb is-active"
+              data-index="0"
+              aria-label="Ver captura 1"
+            >
+              <img
+                src="https://pbs.twimg.com/media/GbatptUa8AAZlJt?format=jpg&name=large"
+                alt=""
+              />
+            </button>
+            <button
+              class="carousel-thumb"
+              data-index="1"
+              aria-label="Ver captura 2"
+            >
+              <img
+                src="https://pbs.twimg.com/media/HQJ6KrbWUAAwVD3?format=jpg&name=large"
+                alt=""
+              />
+            </button>
+            <button
+              class="carousel-thumb"
+              data-index="2"
+              aria-label="Ver captura 3"
+            >
+              <img
+                src="https://pbs.twimg.com/media/HQJ6L9MXQAAf9JJ?format=jpg&name=large"
+                alt=""
+              />
+            </button>
+            <button
+              class="carousel-thumb"
+              data-index="3"
+              aria-label="Ver captura 4"
+            >
+              <img
+                src="https://pbs.twimg.com/media/HQJ6L9GWwAALK3d?format=jpg&name=large"
+                alt=""
+              />
+            </button>
+            <button
+              class="carousel-thumb"
+              data-index="4"
+              aria-label="Ver captura 5"
+            >
+              <img
+                src="https://pbs.twimg.com/media/HQJ6L9SWAAAFCdX?format=jpg&name=large"
+                alt=""
+              />
+            </button>
+            <button
+              class="carousel-thumb"
+              data-index="5"
+              aria-label="Ver captura 6"
+            >
+              <img
+                src="https://pbs.twimg.com/media/HQJ6NNpX0AAiK9L?format=jpg&name=large"
+                alt=""
+              />
+            </button>
           </div>
         </div>
       </section>
 
-      <!-- ESPECIFICAÇÕES EM TABELA -->
+      <!-- ESPECIFICAÇÕES -->
       <section class="game-specs section">
         <div class="specs-container">
           <div class="section-heading">
             <p class="eyebrow">CONFIGURAÇÕES</p>
             <h2 class="section-title">Especificações Técnicas (PC)</h2>
           </div>
-          <table class="specs-table">
-            <thead>
-              <tr>
-                <th>Requisito</th>
-                <th>Mínimo</th>
-                <th>Recomendado</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>Sistema Operacional</th>
-                <td>Windows 10 64-bit</td>
-                <td>Windows 10/11 64-bit</td>
-              </tr>
-              <tr>
-                <th>Processador</th>
-                <td>Core i3-3225 3.3 GHz</td>
-                <td>Core i5-7300U / AMD Ryzen 3 3300X</td>
-              </tr>
-              <tr>
-                <th>Memória RAM</th>
-                <td>8 GB</td>
-                <td>16 GB</td>
-              </tr>
-              <tr>
-                <th>Placa de Vídeo</th>
-                <td>Intel HD 4000 / AMD Radeon R5</td>
-                <td>NVIDIA GTX 960 / AMD R9 280</td>
-              </tr>
-              <tr>
-                <th>Armazenamento</th>
-                <td>30 GB de espaço disponível</td>
-                <td>30 GB SSD</td>
-              </tr>
-            </tbody>
-          </table>
+
+          <div class="specs-card">
+            <table class="specs-table">
+              <thead>
+                <tr>
+                  <th>Requisito</th>
+                  <th>Mínimo</th>
+                  <th>Recomendado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>
+                    <span class="material-symbols-outlined"
+                      >desktop_windows</span
+                    >Sistema Operacional
+                  </th>
+                  <td>Windows 10 64-bit</td>
+                  <td>Windows 10/11 64-bit</td>
+                </tr>
+                <tr>
+                  <th>
+                    <span class="material-symbols-outlined">memory</span
+                    >Processador
+                  </th>
+                  <td>Core i3-3225 3.3 GHz</td>
+                  <td>Core i5-7300U / AMD Ryzen 3 3300X</td>
+                </tr>
+                <tr>
+                  <th>
+                    <span class="material-symbols-outlined"
+                      >developer_board</span
+                    >Memória RAM
+                  </th>
+                  <td>8 GB</td>
+                  <td>16 GB</td>
+                </tr>
+                <tr>
+                  <th>
+                    <span class="material-symbols-outlined"
+                      >stadia_controller</span
+                    >Placa de Vídeo
+                  </th>
+                  <td>Intel HD 4000 / AMD Radeon R5</td>
+                  <td>NVIDIA GTX 960 / AMD R9 280</td>
+                </tr>
+                <tr>
+                  <th>
+                    <span class="material-symbols-outlined">hard_drive</span
+                    >Armazenamento
+                  </th>
+                  <td>30 GB de espaço disponível</td>
+                  <td>30 GB SSD</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -205,14 +345,23 @@
             <p class="eyebrow">A COMUNIDADE</p>
             <h2 class="section-title">Comentários dos Jogadores</h2>
           </div>
+
           <div class="comments-list">
             <article class="comment-card">
+              <span class="comment-card__quote">"</span>
               <div class="comment-header">
                 <div class="comment-avatar">GV</div>
                 <div>
                   <p class="comment-author">Gabriel Victor</p>
                   <p class="comment-date">Há 2 dias</p>
                 </div>
+              </div>
+              <div class="comment-rating">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
               </div>
               <p class="comment-text">
                 O modo Construção Zero trouxe o jogo de volta para mim! Partidas
@@ -222,12 +371,20 @@
             </article>
 
             <article class="comment-card">
+              <span class="comment-card__quote">"</span>
               <div class="comment-header">
                 <div class="comment-avatar">LR</div>
                 <div>
                   <p class="comment-author">Lucas Rocha</p>
                   <p class="comment-date">Há 1 semana</p>
                 </div>
+              </div>
+              <div class="comment-rating">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star_half</span>
               </div>
               <p class="comment-text">
                 Eventos incríveis e atualizações constantes. Nunca fica
@@ -246,12 +403,15 @@
             <p class="eyebrow">RECOMENDAÇÕES</p>
             <h2 class="section-title">Jogos Semelhantes</h2>
           </div>
+
           <div class="similar-grid">
             <article class="similar-card">
-              <img
-                src="https://preview.redd.it/is-marvel-rivals-art-ai-generated-v0-ehrwy6mjlm5e1.png?width=2560&format=png&auto=webp&s=d0fd3bcc1ab28735fae445e4cfb4c5dda19a023b"
-                alt="Marvel Rivals"
-              />
+              <div class="similar-card__img-wrap">
+                <img
+                  src="https://preview.redd.it/is-marvel-rivals-art-ai-generated-v0-ehrwy6mjlm5e1.png?width=2560&format=png&auto=webp&s=d0fd3bcc1ab28735fae445e4cfb4c5dda19a023b"
+                  alt="Marvel Rivals"
+                />
+              </div>
               <div class="similar-card__body">
                 <h3 class="similar-card__title">Marvel Rivals</h3>
                 <span class="similar-card__price">Gratuito</span>
@@ -259,10 +419,12 @@
             </article>
 
             <article class="similar-card">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzDxrFFgK-Az7y1y8PVJ34ZetC2vAW3JvgspThKl_L8WhIAfxheu11SSY&s=10"
-                alt="Deltarune"
-              />
+              <div class="similar-card__img-wrap">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzDxrFFgK-Az7y1y8PVJ34ZetC2vAW3JvgspThKl_L8WhIAfxheu11SSY&s=10"
+                  alt="Deltarune"
+                />
+              </div>
               <div class="similar-card__body">
                 <h3 class="similar-card__title">Deltarune</h3>
                 <span class="similar-card__price">R$ 39,90</span>
@@ -270,10 +432,12 @@
             </article>
 
             <article class="similar-card">
-              <img
-                src="https://static.wikia.nocookie.net/cyberpunk/images/e/e0/Cyberpunk2077-keyart-female_v.png/revision/latest?cb=20201201001215"
-                alt="Cyberpunk 2077"
-              />
+              <div class="similar-card__img-wrap">
+                <img
+                  src="https://static.wikia.nocookie.net/cyberpunk/images/e/e0/Cyberpunk2077-keyart-female_v.png/revision/latest?cb=20201201001215"
+                  alt="Cyberpunk 2077"
+                />
+              </div>
               <div class="similar-card__body">
                 <h3 class="similar-card__title">Cyberpunk 2077</h3>
                 <span class="similar-card__price">R$ 79,90</span>
@@ -289,4 +453,79 @@
       <p>&copy; 2026 Ind Store. Todos os direitos reservados.</p>
     </footer>
   </body>
+  <script>
+    (function () {
+      const track = document.getElementById("carouselTrack");
+      const thumbs = Array.from(document.querySelectorAll(".carousel-thumb"));
+      const slides = Array.from(document.querySelectorAll(".carousel-slide"));
+      const prevBtn = document.getElementById("carouselPrev");
+      const nextBtn = document.getElementById("carouselNext");
+      const stage = document.querySelector(".carousel-stage");
+
+      let index = 0;
+      const total = slides.length;
+      let autoplayTimer = null;
+      const AUTOPLAY_MS = 5000;
+
+      function render() {
+        track.style.transform = "translateX(" + -index * 100 + "%)";
+        thumbs.forEach((t, i) => t.classList.toggle("is-active", i === index));
+      }
+
+      function goTo(i) {
+        index = (i + total) % total;
+        render();
+      }
+
+      function next() {
+        goTo(index + 1);
+      }
+      function prev() {
+        goTo(index - 1);
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(next, AUTOPLAY_MS);
+      }
+      function stopAutoplay() {
+        if (autoplayTimer) clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+
+      nextBtn.addEventListener("click", () => {
+        next();
+        startAutoplay();
+      });
+      prevBtn.addEventListener("click", () => {
+        prev();
+        startAutoplay();
+      });
+      thumbs.forEach((t) => {
+        t.addEventListener("click", () => {
+          goTo(parseInt(t.dataset.index, 10));
+          startAutoplay();
+        });
+      });
+
+      stage.addEventListener("mouseenter", stopAutoplay);
+      stage.addEventListener("mouseleave", startAutoplay);
+
+      let dragStartX = null;
+      stage.addEventListener("pointerdown", (e) => {
+        dragStartX = e.clientX;
+      });
+      stage.addEventListener("pointerup", (e) => {
+        if (dragStartX === null) return;
+        const delta = e.clientX - dragStartX;
+        if (delta > 60) prev();
+        else if (delta < -60) next();
+        dragStartX = null;
+        startAutoplay();
+      });
+
+      render();
+      startAutoplay();
+    })();
+  </script>
 </html>
