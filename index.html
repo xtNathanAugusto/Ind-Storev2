@@ -3,133 +3,336 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ind Store</title>
+    <title>Ind Store — sua loja de jogos indie</title>
+    <meta
+      name="description"
+      content="A Ind Store reúne os jogos que valem seu tempo de tela: dos fenômenos multiplayer aos RPGs inesquecíveis, com ofertas toda semana."
+    />
+    <meta name="theme-color" content="#0a0715" />
+    <meta property="og:title" content="Ind Store — sua loja de jogos indie" />
+    <meta
+      property="og:description"
+      content="Jogos indie selecionados, sem enrolação."
+    />
+
     <link href="./css/index.css" rel="stylesheet" />
-    <script src="src/sidebar.js" defer></script>
+    <style>
+      .game-list,
+      .game-card,
+      .game-card:hover,
+      .game-list:hover .game-card:not(:hover) {
+        transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+        transition-duration: 1.2s !important;
+        transition-delay: 0.05s;
+      }
+      .game-card {
+        will-change:
+          flex-grow, flex-basis, transform, box-shadow, filter, opacity;
+      }
+      .game-info {
+        transition: padding 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .game-card:hover .game-info {
+        padding-left: 28px;
+        padding-bottom: 26px;
+      }
+      .game-card::before {
+        transition: background 0.8s ease;
+        background: linear-gradient(
+          180deg,
+          rgba(15, 23, 42, 0.05) 0%,
+          rgba(15, 23, 42, 0.65) 55%,
+          rgba(2, 6, 23, 0.95) 100%
+        );
+      }
+      .game-card:hover::before {
+        background: linear-gradient(
+          180deg,
+          rgba(15, 23, 42, 0) 0%,
+          rgba(15, 23, 42, 0.75) 45%,
+          rgba(2, 6, 23, 0.98) 100%
+        );
+      }
+      .game-image {
+        transition:
+          transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+          filter 0.7s ease;
+        transform: scale(1.02);
+      }
+      .game-card:hover .game-image {
+        transform: scale(1.08);
+        filter: saturate(1.08);
+      }
+      .game-list:hover .game-card:not(:hover) {
+        flex: 0.55;
+        opacity: 0.7;
+        filter: grayscale(0.4);
+        transform: scale(0.97);
+      }
+    </style>
   </head>
-  <body>
+  <body id="topo">
+    <div class="video-background" aria-hidden="true">
+      <iframe
+        src="https://www.youtube.com/embed/91t0ha9x0AE?autoplay=1&mute=1&loop=1&playlist=91t0ha9x0AE&controls=0&showinfo=0&rel=0&modestbranding=1&disablekb=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      >
+      </iframe>
+      <div class="video-overlay"></div>
+    </div>
+
+    <div class="crt-overlay" aria-hidden="true"></div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>NOVOS LANÇAMENTOS</span><span>★</span>
+        <span>OFERTAS DA SEMANA</span><span>★</span> <span>FORTNITE</span
+        ><span>★</span> <span>DELTARUNE</span><span>★</span>
+        <span>MARVEL RIVALS</span><span>★</span> <span>PERSONA 3 RELOAD</span
+        ><span>★</span> <span>CYBERPUNK 2077</span><span>★</span>
+        <span>NOVOS LANÇAMENTOS</span><span>★</span>
+        <span>OFERTAS DA SEMANA</span><span>★</span> <span>FORTNITE</span
+        ><span>★</span> <span>DELTARUNE</span><span>★</span>
+        <span>MARVEL RIVALS</span><span>★</span> <span>PERSONA 3 RELOAD</span
+        ><span>★</span> <span>CYBERPUNK 2077</span><span>★</span>
+      </div>
+    </div>
+
     <header class="header">
-      <h1>Ind Store</h1>
+      <div class="header__inner">
+        <a href="#topo" class="logo">
+          <span class="logo__mark">IND</span
+          ><span class="logo__rest">STORE</span>
+        </a>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="sidebar"
+          aria-label="Abrir menu de navegação"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </header>
 
     <div id="main-content">
       <main class="content-area">
         <section id="sobre-nos" class="section intro-section">
-          <div class="hero-content">
-            <h2>Bem vindo à Ind Store</h2>
-            <p>Conheça os melhores jogos a um clique de distância.</p>
-            <a href="#melhores-jogos" class="btn">Ver jogos</a>
+          <div class="intro-grid">
+            <div class="hero-content">
+              <p class="eyebrow">PRESS START</p>
+              <h2>
+                Jogos indie <span class="hero-accent">selecionados</span>, sem
+                enrolação.
+              </h2>
+              <p class="hero-copy">
+                A Ind Store reúne os títulos que valem seu tempo de tela — dos
+                fenômenos multiplayer aos RPGs que ninguém esquece.
+              </p>
+              <div class="hero-actions">
+                <a href="#melhores-jogos" class="btn btn--primary"
+                  >Ver catálogo</a
+                >
+                <a href="#contatos" class="btn btn--ghost">Falar com a loja</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-bar reveal" aria-label="Números da Ind Store">
+          <div class="stat">
+            <span class="stat__value" data-count-to="500" data-suffix="+"
+              >0</span
+            >
+            <span class="stat__label">Jogos no catálogo</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" data-count-to="12" data-suffix="K+"
+              >0</span
+            >
+            <span class="stat__label">Jogadores ativos</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" data-count-to="4.8" data-decimals="1"
+              >0</span
+            >
+            <span class="stat__label">Nota média</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value stat__value--static">24/7</span>
+            <span class="stat__label">Suporte</span>
+          </div>
+        </section>
+
+        <section id="ofertas" class="section deals-section">
+          <div class="section-heading reveal">
+            <p class="eyebrow">LIMITED TIME EVENT</p>
+            <h2 class="section-title">Ofertas da Semana</h2>
+            <p class="deals-countdown">
+              Encerra em
+              <span
+                class="deals-countdown__time"
+                id="dealCountdown"
+                data-hours="72"
+                >--:--:--:--</span
+              >
+            </p>
+          </div>
+
+          <div class="deals-grid reveal">
+            <article class="deal-card">
+              <span class="deal-badge">-60%</span>
+              <img
+                src="https://static.wikia.nocookie.net/cyberpunk/images/e/e0/Cyberpunk2077-keyart-female_v.png/revision/latest?cb=20201201001215"
+                alt="Capa Cyberpunk"
+                class="deal-image"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="deal-info">
+                <h3>Cyberpunk 2077</h3>
+                <div class="deal-price">
+                  <span class="deal-price__old">R$ 199,90</span>
+                  <span class="deal-price__new">R$ 79,90</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="deal-card">
+              <span class="deal-badge">-40%</span>
+              <img
+                src="https://i0.wp.com/www.portaldonerd.com.br/wp-content/uploads/2024/01/persona-3-reload-scaled.jpeg"
+                alt="Capa Persona"
+                class="deal-image"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="deal-info">
+                <h3>Persona 3 Reload</h3>
+                <div class="deal-price">
+                  <span class="deal-price__old">R$ 249,90</span>
+                  <span class="deal-price__new">R$ 149,90</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="deal-card">
+              <span class="deal-badge">-33%</span>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzDxrFFgK-Az7y1y8PVJ34ZetC2vAW3JvgspThKl_L8WhIAfxheu11SSY&s=10"
+                alt="Capa Deltarune"
+                class="deal-image"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="deal-info">
+                <h3>Deltarune</h3>
+                <div class="deal-price">
+                  <span class="deal-price__old">R$ 59,90</span>
+                  <span class="deal-price__new">R$ 39,90</span>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
         <section id="melhores-jogos" class="section games-section">
-          <h2 class="section-title">Melhores Jogos</h2>
+          <div class="section-heading reveal">
+            <p class="eyebrow">SELECT YOUR GAME</p>
+            <h2 class="section-title">Melhores Jogos</h2>
+          </div>
 
-          <div class="game-list">
-            <article class="game-card">
+          <div class="game-list reveal">
+            <article class="game-card" style="--card-glow: #35e5ff">
               <img
-                src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80"
+                src="https://cms-assets.unrealengine.com/cm6l5gfpm05kr07my04cqgy2x/resize=fit:clip,width:1920/quality=value:80/cmt14h2ardvpq07o76t76zt0m"
                 alt="Fortnite"
                 class="game-image"
+                loading="lazy"
               />
               <div class="game-info">
+                <span class="game-index">01</span>
                 <h3>Fortnite</h3>
                 <div class="game-tags">
-                  <span>Multijogador</span>
-                  <span>Battle Royale</span>
+                  <span>Multijogador</span><span>Battle Royale</span>
                 </div>
-                <a
-                  href="https://www.fortnite.com/?lang=pt-BR"
-                  class="game-link"
-                  target="_blank"
-                  rel="noreferrer"
+                <a href="#" class="game-link" target="_blank" rel="noreferrer"
                   >Saiba mais</a
                 >
               </div>
             </article>
 
-            <article class="game-card">
+            <article class="game-card" style="--card-glow: #9d4dff">
               <img
-                src="https://images.unsplash.com/photo-1511884642898-4c92249e20b6?auto=format&fit=crop&w=1200&q=80"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzDxrFFgK-Az7y1y8PVJ34ZetC2vAW3JvgspThKl_L8WhIAfxheu11SSY&s=10"
                 alt="Deltarune"
                 class="game-image"
+                loading="lazy"
               />
               <div class="game-info">
+                <span class="game-index">02</span>
                 <h3>Deltarune</h3>
-                <div class="game-tags">
-                  <span>RPG</span>
-                  <span>Indie</span>
-                </div>
-                <a
-                  href="https://www.deltarune.com/"
-                  class="game-link"
-                  target="_blank"
-                  rel="noreferrer"
+                <div class="game-tags"><span>RPG</span><span>Indie</span></div>
+                <a href="#" class="game-link" target="_blank" rel="noreferrer"
                   >Saiba mais</a
                 >
               </div>
             </article>
 
-            <article class="game-card">
+            <article class="game-card" style="--card-glow: #35e5ff">
               <img
-                src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?auto=format&fit=crop&w=1200&q=80"
+                src="https://preview.redd.it/is-marvel-rivals-art-ai-generated-v0-ehrwy6mjlm5e1.png?width=2560&format=png&auto=webp&s=d0fd3bcc1ab28735fae445e4cfb4c5dda19a023b"
                 alt="Marvel Rivals"
                 class="game-image"
+                loading="lazy"
               />
               <div class="game-info">
+                <span class="game-index">03</span>
                 <h3>Marvel Rivals</h3>
                 <div class="game-tags">
-                  <span>Ação</span>
-                  <span>Estratégia</span>
+                  <span>Ação</span><span>Estratégia</span>
                 </div>
-                <a
-                  href="https://www.marvelrivals.com/"
-                  class="game-link"
-                  target="_blank"
-                  rel="noreferrer"
+                <a href="#" class="game-link" target="_blank" rel="noreferrer"
                   >Saiba mais</a
                 >
               </div>
             </article>
 
-            <article class="game-card">
+            <article class="game-card" style="--card-glow: #9d4dff">
               <img
-                src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=1200&q=80"
-                alt="Persona 3 Reload"
+                src="https://i0.wp.com/www.portaldonerd.com.br/wp-content/uploads/2024/01/persona-3-reload-scaled.jpeg"
+                alt="Persona"
                 class="game-image"
+                loading="lazy"
               />
               <div class="game-info">
+                <span class="game-index">04</span>
                 <h3>Persona 3 Reload</h3>
-                <div class="game-tags">
-                  <span>RPG</span>
-                  <span>Anime</span>
-                </div>
-                <a
-                  href="https://www.atlus.com/persona3/"
-                  class="game-link"
-                  target="_blank"
-                  rel="noreferrer"
+                <div class="game-tags"><span>RPG</span><span>Anime</span></div>
+                <a href="#" class="game-link" target="_blank" rel="noreferrer"
                   >Saiba mais</a
                 >
               </div>
             </article>
-            <article class="game-card">
+
+            <article class="game-card" style="--card-glow: #c084fc">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1PDCe75_Nkd3whnh2PdCMwN1JUO5lkk0WZukg94fEua42qmoevh3RaSE&s=10"
-                alt="Cyberpunk 2077"
+                src="https://static.wikia.nocookie.net/cyberpunk/images/e/e0/Cyberpunk2077-keyart-female_v.png/revision/latest?cb=20201201001215"
+                alt="Cyberpunk"
                 class="game-image"
+                loading="lazy"
               />
               <div class="game-info">
-                <h3>Persona 3 Reload</h3>
+                <span class="game-index">05</span>
+                <h3>Cyberpunk 2077</h3>
                 <div class="game-tags">
-                  <span>RPG</span>
-                  <span>Anime</span>
+                  <span>RPG</span><span>Mundo Aberto</span>
                 </div>
-                <a
-                  href="https://www.atlus.com/persona3/"
-                  class="game-link"
-                  target="_blank"
-                  rel="noreferrer"
+                <a href="#" class="game-link" target="_blank" rel="noreferrer"
                   >Saiba mais</a
                 >
               </div>
@@ -137,25 +340,71 @@
           </div>
         </section>
 
-        <section id="contatos" class="card section">
-          <h2>Contatos</h2>
-          <p>Nathan Augusto Lima</p>
-          <p>Auxiliar de Dev</p>
+        <section id="contatos" class="section contact-section">
+          <div class="card reveal">
+            <p class="eyebrow">GAME OVER? FALE CONOSCO</p>
+            <h2>Contatos</h2>
+            <div class="contact-row">
+              <div class="contact-avatar" aria-hidden="true">NA</div>
+              <div>
+                <p class="contact-name">Nathan Augusto Lima</p>
+                <p class="contact-role">Auxiliar de Dev</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mega-section">
+          <h1 class="mega-section__title" aria-hidden="true">IND STORE</h1>
+          <h3>Sua Melhor página</h3>
         </section>
       </main>
 
-      <aside class="sidebar" id="sidebar">
-        <h2>Menu</h2>
+      <aside class="sidebar" id="sidebar" aria-label="Navegação da página">
         <ul>
-          <li><a href="#sobre-nos" class="nav-link active">Sobre Nós</a></li>
-          <li><a href="#melhores-jogos" class="nav-link">Melhores Jogos</a></li>
-          <li><a href="#contatos" class="nav-link">Contatos</a></li>
+          <li>
+            <a href="#sobre-nos" class="nav-link active" data-label="Sobre Nós"
+              ><span class="nav-dot"></span
+            ></a>
+          </li>
+          <li>
+            <a href="#ofertas" class="nav-link" data-label="Ofertas"
+              ><span class="nav-dot"></span
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#melhores-jogos"
+              class="nav-link"
+              data-label="Melhores Jogos"
+              ><span class="nav-dot"></span
+            ></a>
+          </li>
+          <li>
+            <a href="#contatos" class="nav-link" data-label="Contatos"
+              ><span class="nav-dot"></span
+            ></a>
+          </li>
         </ul>
+        <div class="sidebar__progress" aria-hidden="true">
+          <div class="sidebar__progress-fill" id="scrollProgress"></div>
+        </div>
       </aside>
+
+      <button
+        class="back-to-top"
+        id="backToTop"
+        type="button"
+        aria-label="Voltar ao topo"
+      >
+        <span aria-hidden="true">↑</span>
+      </button>
     </div>
 
     <footer class="footer">
-      <p>&copy; 2024 Ind Store. All rights reserved.</p>
+      <p>&copy; 2026 Ind Store. All rights reserved.</p>
     </footer>
+
+    <script src="src/sidebar.js" defer></script>
   </body>
 </html>
