@@ -607,17 +607,14 @@ a {
   color: var(--text);
 }
 
-/* =========================================================
-   ⚠️ BLOCO PROTEGIDO — Accordion "Melhores Jogos"
-   Nada aqui foi alterado (estrutura, timings e curvas
-   intactos), conforme pedido.
-========================================================= */
+/* ========================================================= */
+
 .game-list {
   display: flex;
   gap: 16px;
   width: 100%;
   align-items: stretch;
-  max-width: 1280px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -643,7 +640,7 @@ a {
   background: #0f172a;
   flex: 1;
   cursor: pointer;
-  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .game-card::before {
@@ -688,7 +685,7 @@ a {
   height: 100%;
   object-fit: cover;
   transition:
-    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.7s ease;
   transform: scale(1.02);
 }
@@ -728,6 +725,9 @@ a {
 
 .game-link {
   display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: rgba(53, 229, 255, 0.05);
   align-items: center;
   gap: 6px;
   font-family: var(--font-display);
@@ -740,6 +740,9 @@ a {
 
 .game-link:hover {
   border-bottom-color: var(--cyan);
+  background: rgba(53, 229, 255, 0.1);
+  color: var(--cyan);
+  transition: all 0.3s var(--ease-soft);
   gap: 10px;
 }
 /* ===================== FIM DO BLOCO PROTEGIDO ===================== */
