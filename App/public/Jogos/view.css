@@ -429,6 +429,7 @@ a {
 .game-details__text {
   color: var(--muted);
   line-height: 1.85;
+  text-align: justify;
   font-size: 1.05rem;
 }
 .game-details__stats {
