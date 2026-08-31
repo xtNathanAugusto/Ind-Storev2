@@ -5,7 +5,7 @@
     "(prefers-reduced-motion: reduce)",
   ).matches;
 
-  const sections = Array.from(document.querySelectorAll(".section"));
+  const sections = Array.from(document.querySelectorAll("section[id]"));
   const navLinks = Array.from(document.querySelectorAll(".nav-link"));
   const progressFill = document.getElementById("scrollProgress");
   const header = document.querySelector(".header");
