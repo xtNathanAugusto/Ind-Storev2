@@ -1,3 +1,5 @@
+/* View.css */
+
 :root {
   --bg: #07050f;
   --surface: #120c24;
@@ -114,18 +116,19 @@ a {
   mix-blend-mode: overlay;
 }
 
-/* ===== Marquee ===== */
 .marquee {
   background: var(--cyan);
   color: #08060f;
   overflow: hidden;
   white-space: nowrap;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   position: sticky;
   top: 0;
-  z-index: 60;
+  z-index: 50;
   font-weight: 700;
   width: 100%;
 }
+
 .marquee__track {
   display: inline-flex;
   gap: 14px;
@@ -133,12 +136,14 @@ a {
   font-family: var(--font-display);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
-  animation: scroll-marquee 30s linear infinite;
+  animation: scroll-marquee 28s linear infinite;
   width: max-content;
 }
+
 .marquee:hover .marquee__track {
   animation-play-state: paused;
 }
+
 @keyframes scroll-marquee {
   from {
     transform: translateX(0);
@@ -147,7 +152,6 @@ a {
     transform: translateX(-50%);
   }
 }
-
 /* ===== Header ===== */
 .header {
   position: sticky;
