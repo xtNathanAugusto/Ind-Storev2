@@ -25,6 +25,8 @@
 
     <link href="../css/index.css" rel="stylesheet" />
     <link href="view.css" rel="stylesheet" />
+
+    <script src="../src/carrousel.js" defer></script>
   </head>
   <body id="topo">
     <div class="crt-overlay" aria-hidden="true"></div>
@@ -411,23 +413,27 @@
           <div class="similar-grid">
             <article class="similar-card">
               <div class="similar-card__img-wrap">
-                <img
-                  src="https://preview.redd.it/is-marvel-rivals-art-ai-generated-v0-ehrwy6mjlm5e1.png?width=2560&format=png&auto=webp&s=d0fd3bcc1ab28735fae445e4cfb4c5dda19a023b"
-                  alt="Marvel Rivals"
-                />
+                <a href="persona3.html">
+                  <img
+                    src="https://i0.wp.com/www.portaldonerd.com.br/wp-content/uploads/2024/01/persona-3-reload-scaled.jpeg"
+                    alt="Persona 3 Reload"
+                  />
+                </a>
               </div>
               <div class="similar-card__body">
-                <h3 class="similar-card__title">Marvel Rivals</h3>
-                <span class="similar-card__price">Gratuito</span>
+                <h3 class="similar-card__title">Persona 3 Reload</h3>
+                <span class="similar-card__price">R$ 79,90</span>
               </div>
             </article>
 
             <article class="similar-card">
               <div class="similar-card__img-wrap">
-                <img
-                  src="https://gameoverdrive.com.br/wp-content/uploads/2026/08/fortnite-esta-em-manutencao-hoje-veja-quando-os-servidores-3-1024x576.webp"
-                  alt="Fortnite"
-                />
+                <a href="../Jogos/fortnite.html">
+                  <img
+                    src="https://gameoverdrive.com.br/wp-content/uploads/2026/08/fortnite-esta-em-manutencao-hoje-veja-quando-os-servidores-3-1024x576.webp"
+                    alt="Fortnite"
+                  />
+                </a>
               </div>
               <div class="similar-card__body">
                 <h3 class="similar-card__title">Fortnite</h3>
@@ -437,10 +443,12 @@
 
             <article class="similar-card">
               <div class="similar-card__img-wrap">
-                <img
-                  src="https://static.wikia.nocookie.net/cyberpunk/images/e/e0/Cyberpunk2077-keyart-female_v.png/revision/latest?cb=20201201001215"
-                  alt="Cyberpunk 2077"
-                />
+                <a href="../Jogos/cyberpunk.html">
+                  <img
+                    src="https://static.wikia.nocookie.net/cyberpunk/images/e/e0/Cyberpunk2077-keyart-female_v.png/revision/latest?cb=20201201001215"
+                    alt="Cyberpunk 2077"
+                  />
+                </a>
               </div>
               <div class="similar-card__body">
                 <h3 class="similar-card__title">Cyberpunk 2077</h3>
@@ -457,79 +465,4 @@
       <p>&copy; 2026 Ind Store. Todos os direitos reservados.</p>
     </footer>
   </body>
-  <script>
-    (function () {
-      const track = document.getElementById("carouselTrack");
-      const thumbs = Array.from(document.querySelectorAll(".carousel-thumb"));
-      const slides = Array.from(document.querySelectorAll(".carousel-slide"));
-      const prevBtn = document.getElementById("carouselPrev");
-      const nextBtn = document.getElementById("carouselNext");
-      const stage = document.querySelector(".carousel-stage");
-
-      let index = 0;
-      const total = slides.length;
-      let autoplayTimer = null;
-      const AUTOPLAY_MS = 5000;
-
-      function render() {
-        track.style.transform = "translateX(" + -index * 100 + "%)";
-        thumbs.forEach((t, i) => t.classList.toggle("is-active", i === index));
-      }
-
-      function goTo(i) {
-        index = (i + total) % total;
-        render();
-      }
-
-      function next() {
-        goTo(index + 1);
-      }
-      function prev() {
-        goTo(index - 1);
-      }
-
-      function startAutoplay() {
-        stopAutoplay();
-        autoplayTimer = setInterval(next, AUTOPLAY_MS);
-      }
-      function stopAutoplay() {
-        if (autoplayTimer) clearInterval(autoplayTimer);
-        autoplayTimer = null;
-      }
-
-      nextBtn.addEventListener("click", () => {
-        next();
-        startAutoplay();
-      });
-      prevBtn.addEventListener("click", () => {
-        prev();
-        startAutoplay();
-      });
-      thumbs.forEach((t) => {
-        t.addEventListener("click", () => {
-          goTo(parseInt(t.dataset.index, 10));
-          startAutoplay();
-        });
-      });
-
-      stage.addEventListener("mouseenter", stopAutoplay);
-      stage.addEventListener("mouseleave", startAutoplay);
-
-      let dragStartX = null;
-      stage.addEventListener("pointerdown", (e) => {
-        dragStartX = e.clientX;
-      });
-      stage.addEventListener("pointerup", (e) => {
-        if (dragStartX === null) return;
-        const delta = e.clientX - dragStartX;
-        if (delta > 60) prev();
-        else if (delta < -60) next();
-        dragStartX = null;
-        startAutoplay();
-      });
-
-      render();
-      startAutoplay();
-    })();
-  </script>
 </html>

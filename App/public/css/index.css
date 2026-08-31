@@ -27,16 +27,6 @@ html {
   scroll-padding-top: 100px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  * {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
-  }
-}
-
 body {
   background-color: var(--bg);
   background-image:
@@ -244,12 +234,6 @@ a {
   scroll-margin-top: 100px;
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding: 30px 20px;
-  }
-}
-
 .eyebrow {
   font-family: var(--font-display);
   font-size: 0.72rem;
@@ -303,13 +287,6 @@ a {
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
-}
-
-@media (min-width: 768px) {
-  .intro-grid {
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 48px;
-  }
 }
 
 .hero-content h2 {
@@ -470,18 +447,6 @@ a {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-}
-
-@media (max-width: 1024px) {
-  .deals-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .deals-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .deal-card {
@@ -773,7 +738,6 @@ a {
   z-index: 0;
 }
 
-/* Camadas sólidas para legibilidade do texto (sem gradiente) */
 .contact-section-wide::before {
   content: "";
   position: absolute;
@@ -866,25 +830,6 @@ a {
 .contact-about strong {
   color: var(--cyan);
   font-weight: 600;
-}
-
-@media (max-width: 900px) {
-  .contact-section-wide::after {
-    width: 100%;
-    background: rgba(10, 7, 21, 0.88);
-  }
-
-  .parallax-bg {
-    background-attachment: scroll;
-  }
-
-  .contact-right-content {
-    padding: 48px 24px;
-  }
-
-  .contact-about {
-    max-width: 100%;
-  }
 }
 
 .mega-section {
