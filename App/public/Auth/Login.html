@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — Ind Store</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/auth.css" />
+  </head>
+  <body>
+    <main class="login-container">
+      <aside class="login-brand">
+        <div class="brand-logo"><span>IND</span> STORE</div>
+
+        <div class="brand-copy">
+          <span class="eyebrow">Acesso de jogador</span>
+          <h1>Sua conta, seu <em>arsenal</em>.</h1>
+          <p>
+            Entre para acompanhar pedidos, resgatar chaves de jogos e aproveitar
+            ofertas exclusivas para membros.
+          </p>
+        </div>
+
+        <div class="brand-stats">
+          <div>
+            <strong>12k+</strong>
+            <span>Jogadores ativos</span>
+          </div>
+          <div>
+            <strong>3.400</strong>
+            <span>Títulos na loja</span>
+          </div>
+          <div>
+            <strong>24/7</strong>
+            <span>Suporte</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="login-form-wrap">
+        <h2>Entrar na conta</h2>
+        <p class="subhead">
+          Novo por aqui? <a href="#">Crie sua conta gratuita</a>
+        </p>
+
+        <form novalidate>
+          <div class="field">
+            <label for="username">Usuário ou e-mail</label>
+            <div class="field-control">
+              <span class="material-symbols-outlined">mail</span>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                autocomplete="username"
+                placeholder="seu@email.com"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="password">Senha</label>
+            <div class="field-control">
+              <span class="material-symbols-outlined">lock</span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                autocomplete="current-password"
+                placeholder="••••••••"
+              />
+              <button
+                type="button"
+                class="toggle-visibility"
+                id="togglePassword"
+                aria-label="Mostrar senha"
+                aria-pressed="false"
+              >
+                <span class="material-symbols-outlined">visibility</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="field-meta">
+            <label class="remember-me">
+              <input type="checkbox" name="remember" />
+              Lembrar de mim
+            </label>
+            <a href="#">Esqueceu a senha?</a>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Entrar
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </form>
+
+        <div class="divider">ou continue com</div>
+
+        <div class="social-row">
+          <button type="button" class="social-btn">
+            <span class="material-symbols-outlined">g_translate</span>
+            Google
+          </button>
+          <button type="button" class="social-btn">
+            <span class="material-symbols-outlined">sports_esports</span>
+            Steam
+          </button>
+        </div>
+
+        <p class="signup-hint">
+          Ao entrar, você concorda com os
+          <a href="#">Termos</a> e a <a href="#">Privacidade</a> da Ind Store.
+        </p>
+      </section>
+    </main>
+
+    <script>
+      const toggleBtn = document.getElementById("togglePassword");
+      const passwordInput = document.getElementById("password");
+
+      toggleBtn.addEventListener("click", () => {
+        const isHidden = passwordInput.type === "password";
+        passwordInput.type = isHidden ? "text" : "password";
+        toggleBtn.setAttribute("aria-pressed", String(isHidden));
+        toggleBtn.setAttribute(
+          "aria-label",
+          isHidden ? "Ocultar senha" : "Mostrar senha",
+        );
+        toggleBtn.querySelector(".material-symbols-outlined").textContent =
+          isHidden ? "visibility_off" : "visibility";
+      });
+    </script>
+  </body>
+</html>
